@@ -1,0 +1,11 @@
+<h2>Course List</h2>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let course of courses">
+    <a href="/course-viewer/{{course.id}}">
+      {{course.title}}
+    </a>
+    <a class="float-right" href="/course-viewer/{{course.id}}/quizzes">
+      Quizzes
+    </a>
+  </li>
+</ul>

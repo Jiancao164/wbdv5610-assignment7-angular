@@ -1,0 +1,49 @@
+<div>
+  <h3>
+    <div>
+      {{question.question}}
+      <span [hidden]="!answered">
+        <i [hidden]="answer === question.correct" class="fas fa-times float-right"></i>
+        <i [hidden]="answer !== question.correct" class="fas fa-check float-right"></i>
+      </span>
+    </div>
+  </h3>
+
+  <ul class="list-group">
+    <li class="list-group-item
+    {{answered && choice === answer && choice !== question.correct? 'list-group-item-danger': ''}}
+    {{answered && choice === question.correct? 'list-group-item-success': ''}}"
+        *ngFor="let choice of question.choices">
+      <label>
+        <input [(ngModel)]="answer" type="radio" value={{choice}} name="question.id">
+        {{choice}}
+      </label>
+      <span class="float-right" [hidden]="!answered">
+          <i [hidden]="choice !== question.correct" class="fas fa-check float-right"></i>
+          <i [hidden]="choice != answer && choice === question.correct" class="fas fa-times float-right"></i>
+      </span>
+    </li>
+  </ul>
+  <br>
+  <!--<div>-->
+    <!--Your answer: <span [hidden]="answered === false">{{answer}}</span>-->
+  <!--</div>-->
+  <br>
+  <div>
+    <!--<button (click)="showAnswer()" class="btn btn-success">-->
+      <!--Grade-->
+    <!--</button>-->
+    <button (click)="submitAnswer()" class="btn btn-primary">
+      Save Answer
+    </button>
+  </div>
+  <br>
+</div>
+
+
+
+<!--<div class="input-group">-->
+    <!--<div *ngFor="let option of question.options">-->
+      <!--<input type="radio" value={{option}}>-->
+    <!--</div>-->
+<!--</div>-->
