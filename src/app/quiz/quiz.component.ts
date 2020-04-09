@@ -20,7 +20,7 @@ export class QuizComponent implements OnInit {
   quizTitle = '';
   questions = [];
   submitQuiz = () => {
-    fetch(`http://localhost:3000/api/quizzes/${this.quizId}/attempts`, {
+    fetch(`https://serene-plateau-75263.herokuapp.com/api/quizzes/${this.quizId}/attempts`, {
       method: 'POST',
       body: JSON.stringify(this.questions),
       headers: {

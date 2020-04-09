@@ -24,7 +24,7 @@ export class TopicPillsComponent implements OnInit {
       this.moduleId = params.moduleId;
       this.lessonId = params.lessonId;
       this.topicId = params.topicId;
-      fetch(`https://wbdv-generic-server.herokuapp.com/api/jannunzi/lessons/${this.lessonId}/topics`)
+      fetch(`https://intense-plains-23669.herokuapp.com/api/lessons/${this.lessonId}/topics`)
         .then(response => response.json())
         .then(topics => this.topics = topics);
     });
